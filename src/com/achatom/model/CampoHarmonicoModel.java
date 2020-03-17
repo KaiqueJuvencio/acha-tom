@@ -1,14 +1,9 @@
-package findo_tone;
+package com.achatom.model;
 
 import java.util.List;
 
-public class CampoHarmonico {
-	@Override
-	public String toString() {
-		return "CampoHarmonico " + nomeCampoHarmonico + " [Do=" + Do + ", Re=" + Re + ", Mi=" + Mi + ", Fa=" + Fa
-				+ ", Sol=" + Sol + ", La=" + La + ", Si=" + Si + "]";
-	}
-
+public class CampoHarmonicoModel {
+	
 	private String nomeCampoHarmonico;
 	private String Do;
 	private String Re;
@@ -17,6 +12,11 @@ public class CampoHarmonico {
 	private String Sol;
 	private String La;
 	private String Si;
+
+	public CampoHarmonicoModel(String nomeCampoHarmonico, List<String> notas) {
+		this.nomeCampoHarmonico = nomeCampoHarmonico;
+		montaCampo(notas);
+	}
 
 	public String getNomeCampoHarmonico() {
 		return nomeCampoHarmonico;
@@ -49,37 +49,23 @@ public class CampoHarmonico {
 	public String getSi() {
 		return Si;
 	}
-
-	public CampoHarmonico(String nomeCampoHarmonico, List<String> notas) {
-		this.nomeCampoHarmonico = nomeCampoHarmonico;
-		montaCampo(notas);
+	
+	@Override
+	public String toString() {
+		return "CampoHarmonico " + nomeCampoHarmonico + " [Do=" + Do + ", Re=" + Re + ", Mi=" + Mi + ", Fa=" + Fa
+				+ ", Sol=" + Sol + ", La=" + La + ", Si=" + Si + "]";
 	}
 
 	private void montaCampo(List<String> ListaDeNotas) {
-
 		int i = 1;
 		for (String nota : ListaDeNotas) {
-			if (i == 1) {
-				this.Do = nota;
-			}
-			if (i == 2) {
-				this.Re = nota;
-			}
-			if (i == 3) {
-				this.Mi = nota;
-			}
-			if (i == 4) {
-				this.Fa = nota;
-			}
-			if (i == 5) {
-				this.Sol = nota;
-			}
-			if (i == 6) {
-				this.La = nota;
-			}
-			if (i == 7) {
-				this.Si = nota;
-			}
+			if (i == 1) {this.Do = nota;}
+			else if (i == 2) {this.Re = nota;}
+			else if (i == 3) {this.Mi = nota;}
+			else if (i == 4) {this.Fa = nota;}
+			else if (i == 5) {this.Sol = nota;}
+			else if (i == 6) {this.La = nota;}
+			else if (i == 7) {this.Si = nota;}
 			i++;
 		}
 	}
