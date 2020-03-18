@@ -3,11 +3,8 @@ package com.achatom.controller;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
-
 import com.achatom.model.CampoHarmonicoModel;
 import com.achatom.service.AcharTom;
-
 
 public class AchaTomController {
 	public static void main(String[] args) {
