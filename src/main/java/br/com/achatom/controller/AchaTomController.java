@@ -34,17 +34,12 @@ public class AchaTomController {
 		List<CampoHarmonicoModel> todosCampos = Arrays.asList(campoDeDo, campoDeRe, campoDeMi, campoDeFa, campoDeSol,
 				campoDeLa, campoDeSi);
 
-//		Scanner sc = new Scanner(System.in);
-//		System.out.println("Digite a nota: ");
-//		String valor = sc.nextLine();
-
 		List<CampoHarmonicoModel> camposEncontrados = new ArrayList<CampoHarmonicoModel>();
 		String valor = "E";
 		camposEncontrados.addAll(AcharTom.acharTom(todosCampos, valor));
 		int tamCampos = camposEncontrados.size();
 		int i = 0;
 
-		// comnetn
 		while (tamCampos > 1) {
 			if (i == 0) {
 				valor = "F#m";
