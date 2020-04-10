@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.achatom.model.CampoHarmonicoModel;
-import br.com.achatom.service.AcharTom;
+import br.com.achatom.service.AcharTomService;
 
 @RestController
 @RequestMapping("/")
@@ -37,16 +38,25 @@ public class AchaTomResource {
 
 	CampoHarmonicoModel campoDeSi = new CampoHarmonicoModel("Si",
 			Arrays.asList("C#m", "Dm", "E", "F#", "G#m", "Am7", "B"));
-	
+
 	List<CampoHarmonicoModel> todosCampos = Arrays.asList(campoDeDo, campoDeRe, campoDeMi, campoDeFa, campoDeSol,
 			campoDeLa, campoDeSi);
 	
+	@Autowired
+	private AcharTomService achaTomService;
 
 	List<String> lista = new ArrayList<String>();
+
+	@CrossOrigin
+	@GetMapping("/")
+	public List<CampoHarmonicoModel> home() {
+		return todosCampos;
+	}
+
 	@CrossOrigin
 	@GetMapping("/nota/{id}")
 	public List<CampoHarmonicoModel> adicionar(@PathVariable String id) {
-		return AcharTom.acharTom(todosCampos, id);
+		return achaTomService.acharTom(todosCampos, id);
 	}
 
 	@PostMapping

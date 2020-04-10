@@ -1,11 +1,17 @@
-package br.com.achatom.service;
+package br.com.achatom.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.achatom.model.CampoHarmonicoModel;
+import org.springframework.stereotype.Service;
 
-public class AcharTom {
-	public static List<CampoHarmonicoModel> acharTom(List<CampoHarmonicoModel> listaCamposHarmonicos, String nota) {
+import br.com.achatom.model.CampoHarmonicoModel;
+import br.com.achatom.service.AcharTomService;
+
+@Service
+public class AcharTomServiceImpl implements AcharTomService{
+	
+	@Override
+	public List<CampoHarmonicoModel> acharTom(List<CampoHarmonicoModel> listaCamposHarmonicos, String nota) {
 		List<CampoHarmonicoModel> camposEncontrados = new ArrayList<CampoHarmonicoModel>();
 		  
 		if (nota.equals("C") || nota.equals("C#") || nota.equals("C#m") || nota.equals("C#m7") || nota.equals("Cm")) {
