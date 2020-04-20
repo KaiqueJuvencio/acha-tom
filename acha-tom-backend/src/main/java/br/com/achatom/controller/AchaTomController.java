@@ -17,7 +17,7 @@ import br.com.achatom.service.AcharTomService;
 
 @RestController
 @RequestMapping("/")
-public class AchaTomResource {
+public class AchaTomController {
 	CampoHarmonicoModel campoDeDo = new CampoHarmonicoModel("D�",
 			Arrays.asList("C", "Dm", "Em", "F", "G", "Am", "Bm7"));
 

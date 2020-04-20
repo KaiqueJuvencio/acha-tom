@@ -4,10 +4,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import br.com.achatom.model.CampoHarmonicoModel;
-import br.com.achatom.service.impl.AcharTomServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 
-public class AchaTomController {
+import br.com.achatom.model.CampoHarmonicoModel;
+import br.com.achatom.service.AcharTomService;
+
+public class AchaTomTeset {
+
+	@Autowired
+	private static AcharTomService achaTomService;
+
 	public static void main(String[] args) {
 
 		CampoHarmonicoModel campoDeDo = new CampoHarmonicoModel("D�",
@@ -36,7 +42,7 @@ public class AchaTomController {
 
 		List<CampoHarmonicoModel> camposEncontrados = new ArrayList<CampoHarmonicoModel>();
 		String valor = "E";
-		camposEncontrados.addAll(AcharTomServiceImpl.acharTom(todosCampos, valor));
+		camposEncontrados.addAll(achaTomService.acharTom(todosCampos, valor));
 		int tamCampos = camposEncontrados.size();
 		int i = 0;
 
@@ -47,7 +53,7 @@ public class AchaTomController {
 			if (i == 1) {
 				valor = "Bm";
 			}
-			tamCampos = AcharTomServiceImpl.acharTom(camposEncontrados, valor).size();
+			tamCampos = achaTomService.acharTom(camposEncontrados, valor).size();
 			if (tamCampos == 0) {
 				System.out.println("Nenhum Tom com as notas solicitadas...");
 			}

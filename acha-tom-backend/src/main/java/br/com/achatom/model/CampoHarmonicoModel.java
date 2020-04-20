@@ -78,4 +78,36 @@ public class CampoHarmonicoModel {
 		}
 	}
 
+	public void setNomeCampoHarmonico(String nomeCampoHarmonico) {
+		this.nomeCampoHarmonico = nomeCampoHarmonico;
+	}
+
+	public void setDo(String do1) {
+		Do = do1;
+	}
+
+	public void setRe(String re) {
+		Re = re;
+	}
+
+	public void setMi(String mi) {
+		Mi = mi;
+	}
+
+	public void setFa(String fa) {
+		Fa = fa;
+	}
+
+	public void setSol(String sol) {
+		Sol = sol;
+	}
+
+	public void setLa(String la) {
+		La = la;
+	}
+
+	public void setSi(String si) {
+		Si = si;
+	}
+
 }
